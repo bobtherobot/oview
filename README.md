@@ -52,8 +52,8 @@ A simple instance:
     <title>Object Viewer Example</title>
     
     <!-- object viewer -->
-	<link href="oviwer/oviwer.min.css" rel="stylesheet">
-    <script src="oviwer/oviwer.min.js"></script>
+	<link href="oviwer.min.css" rel="stylesheet">
+    <script src="oviwer.min.js"></script>
 
     <head>
         <script>
