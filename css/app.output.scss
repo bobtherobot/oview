@@ -55,12 +55,6 @@
 			@include selection;
 		}
 
-		
-	
-		// .data-line:nth-of-type(odd) {
-		// 	background-color : $alternate-row-bkgd-color;
-		// 	@include selection;
-		// }
 		.oview-data-line {
 			position : relative;
 			display : inline-block;
@@ -69,12 +63,8 @@
 			padding : 0 0 0 0.6em;
 			border-bottom : $row-underline;
 			transition : $line-transition;
-			//@include line-click;
 			@include line-hover;
 			@include selection;
-			//line-height : 1.4em;
-			//overflow: hidden;
-			//width : 100%;
 			
 			.oview-name {
 				display : inline-block;
@@ -86,16 +76,6 @@
 				vertical-align: top;
 			}
 			.oview-value {
-				// // moved to base for wrap toggle
-				// // wrap
-				// display : inline;
-				// white-space : normal;
-				// word-break: break-all;
-				//
-				// // nowrap
-				// display : inline-block;
-				// white-space : nowrap;
-				// word-break: none;
 
 				&.oview-numeric {
 					color : $light-text-numeric;
@@ -180,14 +160,10 @@
 			.oview-header {
 				border-bottom : $dark-row-underline;
 			}
-			// nth-of-type
-			// nth-child
-			// .data-line:nth-of-type(odd) {
-			// 	background-color : $dark-alternate-row-bkgd-color;
-			// }
+	
 			.oview-data-line {
 				border-bottom : $dark-row-underline;
-				//@include dark-line-click;
+	
 				@include dark-line-hover;
 				&.oview-numeric {
 					color : $dark-text-numeric;
@@ -241,17 +217,13 @@
 
 	.oview-folder {
 		white-space : nowrap;
-		// overflow: hidden; // moved to base for wrap toggle
+
 		width : 100%;
 		label {
 			display : block;
-			//padding: 0.2em;
 			border-bottom: $row-underline;
 			@include selection;
-			//line-height : 1.2em;
 
-			//word-break: break-all;
-			//white-space: normal;
 			&.oview-sub-folder-title {
 				color : $sub-folder-title;
 			}
@@ -267,9 +239,7 @@
 	.oview-folder .oview-folder-content {
 		padding-left : 1em;
 		display: none;
-  		//transition: all 1s;
 		height: auto;
-		//padding-top: 1px;
 	}
 	.oview-folder input:checked ~ .oview-folder-content {
 		display: block;

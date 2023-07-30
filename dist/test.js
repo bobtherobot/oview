@@ -3,21 +3,8 @@ var bob1;
 var bob2;
 document.addEventListener("DOMContentLoaded", () => {
 
-    bob1 = new oview.Main({
-        elem : "target1"
-            //fontSize : 10,
-            //lineHeight : 10,
-            //font : "Helvetica",
-           //display : "dark" // light
-    });
-
-    bob2 = new oview.Main({
-        elem : "target2"
-            //fontSize : 10,
-            //lineHeight : 10,
-            //font : "Helvetica",
-           //display : "dark" // light
-    });
+    bob1 = window.oview.make("target1");
+    bob2 = window.oview.make("target2");
 
     var obj1 = {
         bob : "er",

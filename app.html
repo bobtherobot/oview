@@ -56,7 +56,7 @@ var bob1;
 var bob2;
 document.addEventListener("DOMContentLoaded", () => {
 
-    bob1 = new oview.Main({
+    bob1 = window.oview.make({
         elem : "target1"
             //fontSize : 10,
             //lineHeight : 10,
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
            //display : "dark" // light
     });
 
-    bob2 = new oview.Main({
+    bob2 = window.oview.make({
         elem : "target2"
             //fontSize : 10,
             //lineHeight : 10,

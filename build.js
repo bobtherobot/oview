@@ -48,6 +48,10 @@ async function run(){
     cssApp = cssApp.replace(/\.\.\/images\//mg, "assets/");
     myfs.save("dist/oview.min.css", cssFonts + "\n" + cssApp);
 
+    
+    myfs.copy("LICENSE", "dist/LICENSE");
+    myfs.copy("README.md", "dist/README.md");
+
     // cleanup
     myfs.remove("dist/assets/toolbar/_ExportCrap.jsx");
     myfs.remove("dist/assets/toolbar/_source.ai");

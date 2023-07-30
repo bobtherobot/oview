@@ -30,55 +30,10 @@
 	cursor : default;
 }
 
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
 @mixin line-hover {
 	&:hover, &:active {
 		background-color: darken($background-color, 3);
 	}
-	// &:active {
-	// 	.value {
-	// 		@include reveal;
-	// 	}
-	// }
-	// &.reveal {
-	// 	.value {
-	// 		@include reveal;
-	// 	}
-	// }
 }
 
 @mixin dark-line-hover {

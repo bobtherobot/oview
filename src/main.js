@@ -20,7 +20,16 @@ window.oview.main = (function(){
     p.root = null;
 
 	p.init = function(params){
+        if(typeof params == 'string'){
+            params = {
+                elem : params
+            }
+        }
         params = params || {};
+
+        if( ! params.elem ){
+            throw new TypeError("No element to put this into!");
+        }
 
         this.ui = {};
         this.userOpts = params;
@@ -50,6 +59,10 @@ window.oview.main = (function(){
 
     p.destroy = function(){
         
+    }
+
+    window.oview.make = function(params){
+        return new oview.Main(params);
     }
 
     window.oview.Main = Main;

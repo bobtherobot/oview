@@ -91,18 +91,6 @@
 			&.oview-regx {
 				border-right : 5px solid $text-icon-bkgd-color
 			}
-			// &.exclude {
-			// 	padding-left : 5px;
-			// 	border-left : 4px solid $text-icon-bkgd-color
-			// }
-			// &.regx:after {
-			// 	content : "RE";
-			// 	position : absolute;
-			// 	top : 0;
-			// 	right : 0px;
-			// 	color : #1381fd;
-			// 	background-color : #1381fd;
-			// }
 		}
 	}
 
@@ -151,7 +139,6 @@
 		font-size: 11px;
 		font-family : $coder-font;
 		z-index : 21;
-		//background-color : #FF0000;
 		[data-oview-id=filter] {
 			position: absolute;
 			top : 2px;
@@ -161,8 +148,6 @@
 			padding-left : 7px;
 			border-radius: 0;
 			border-top-left-radius: 10px;
-			// border-top-right-radius: 0;
-			// border-bottom-right-radius: 0;
 			border-bottom-left-radius: 10px;
 		}
 		
@@ -182,19 +167,6 @@
 		}
 	}
 
-	// #excludeWrapper {
-	// 	@include text-icon;
-	// 	margin-right: -10px;
-	// 	width : 20px;
-	// 	#exclude {
-	// 		width : 20px;
-	// 		border-top-left-radius: 10px;
-	// 		border-top-right-radius: 0;
-	// 		border-bottom-right-radius: 0;
-	// 		border-bottom-left-radius: 10px;
-	// 	}
-	// }
-	
 
 	&.oview-dark {
 		background-color : $dark-tools-bkgd;
@@ -284,10 +256,5 @@
 			}
 		}
 	
-		// #excludeWrapper {
-		// 	.t-icon {
-		// 		@include dark-t-icon-color;
-		// 	}
-		// }
 	}
 }

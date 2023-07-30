@@ -95,12 +95,9 @@ input, select {
 
 
 .oview-radio-group {
-	//clear: both;
 	display: inline-block;
 	white-space : nowrap;
 	label {
-		//float: left;
-		//display : inline-block;
 		@include button-up;
 		margin-right : -0.5em;
 		border-radius: 0;

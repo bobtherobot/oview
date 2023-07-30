@@ -27,76 +27,6 @@
 
 
 
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
 .oview-folder {
   overflow: hidden;
 }
@@ -570,41 +500,6 @@
   display: block;
 }
 
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
 [data-oview-id=saveDialog] {
   display: inline-block;
   position: absolute;
@@ -660,41 +555,6 @@
   padding: 10px;
 }
 
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
 [data-oview-id=filterHistoryWrapper] {
   position: absolute;
   left: 90px;
@@ -912,41 +772,6 @@
   color: #FFFFFF;
 }
 
-/*
-@mixin line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 50);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-@mixin dark-line-click {
-	&:active:before {
-		border-left: 4px solid lighten($dark-background-color, 15);
-		width : 1px;
-		height : 100%;
-		position : absolute;
-		left : 0;
-		top : 0;
-		content : ' ';
-	}
-}
-
-
-@mixin reveal {
-	//&:active {
-		position : relative;
-		display : inline;
-		white-space : normal;
-		word-break: break-all;
-	//}
-}
-*/
 .oview-toolbar-icon {
   display: inline-block;
   position: relative;
