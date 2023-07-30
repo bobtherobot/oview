@@ -48,20 +48,36 @@ A simple instance:
 
 # Example
 
-    document.addEventListener("DOMContentLoaded", () => {
+    <html>
+    <title>Object Viewer Example</title>
+    
+    <!-- object viewer -->
+	<link href="oviwer/oviwer.min.css" rel="stylesheet">
+    <script src="oviwer/oviwer.min.js"></script>
 
-        var myViewer = window.oview.make({
-            elem : "target1"
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            var myViewer = window.oview.make("target1");
+            myViewer.add({
+                bob : "er",
+                sally : {
+                    prop1 : 1,
+                    prop2 : 2,
+                    prop3 : 3
+                }
+            }, "my object label");
+
         });
+        </script>
+    </head>
 
-        // add an object:
-        myViewer.add({
-            bob : "er",
-            sally : {
-                prop1 : 1,
-                prop2 : 2,
-                prop3 : 3
-            }
-        }, "my object label");
+    
+    <body>
+        <div id="target1">
+    </body>
+    
+    </html>
 
-    });
+    
