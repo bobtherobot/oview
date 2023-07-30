@@ -3,7 +3,7 @@ Zero dependency object viewer
 
 Provides a means to display mulitple objects in a single view, with search fetures.
 
-## Instanciate an object viwer (simple)
+## Instanciate an object viwwer (simple)
 
 A simple instance:
 
@@ -11,7 +11,7 @@ A simple instance:
 
     var myViewer = window.oview.make("target1");
 
-## Instanciate an object viwer (with options)
+## Instanciate an object viewer (with options)
 
      // oview.make({
      //    elem        // (required) the to put the viewer into. Can be DIV id (string), or use a physical DOM element.
