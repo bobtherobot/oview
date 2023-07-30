@@ -1,0 +1,293 @@
+// @use "app.vars.scss" as *;
+// @use "app.mixins.scss" as *;
+
+@import "app.vars";
+@import "app.mixins";
+@mixin t-icon-color {
+	color : #b8b8b8;
+	border : $input-border;
+	background-color : #FFFFFF;
+	&:hover {
+		background-color : #aaddff;
+		color : #FFFFFF;
+	}
+	&.oview-on {
+		background-color : $text-icon-bkgd-color;
+		color : #FFFFFF;
+	}
+}
+@mixin dark-t-icon-color {
+	color : #b8b8b8;
+	border : $dark-input-border;
+	background-color : #000000;
+	&:hover {
+		background-color : #336b91;
+		color : #FFFFFF;
+	}
+	&.oview-on {
+		background-color : $text-icon-bkgd-color;
+		color : #FFFFFF;
+	}
+}
+@mixin text-icon {
+	position: relative;
+	display : inline-block;
+	width : $header-h;
+	height : $header-h;
+	.oview-t-icon {
+		position: absolute;
+		font-family : Arial, Helvetica, sans-serif;
+		font-size: 9px;
+		top : 2px;
+		line-height : 19px;
+		font-weight : bold;
+		user-select : none;
+		cursor : pointer;
+		width : 23px;
+		height : 20px;
+		text-align : center;
+		
+		@include t-icon-color;
+	}
+}
+
+[data-oview-id=filterHistoryWrapper] {
+	position: absolute;
+	left : 90px;
+	top : 22px;
+	font-size: 11px;
+	font-family : $coder-font;
+	z-index : 20;
+	width : 40%;
+	[data-oview-id=filterHistory] {
+		position: relative;
+		//box-shadow : 0 3px 14px rgba(0,0,0, 0.3);
+		border : #eeeeee;
+		max-width : 100%;
+		overflow-y : auto;
+		overflow-x : hidden;
+		max-height : 240px;
+		background-color : #FFFFFF;
+		@include scrollbar-style;
+		.oview-item {
+			position : relative;
+			background-color : #FFFFFF;
+			color : #000000;
+			cursor : default;
+			line-height : 1.7em;
+			padding-left : 5px;
+			width : 100%;
+			margin-top : 2px;
+			margin-bottom : 2px;
+			overflow : hidden;
+			&:hover, &.oview-selected {
+				background-color : $tools-history-hover;
+			}
+			&.oview-selected {
+				background-color : $tools-history-selected;
+				color : $tools-history-selected-text;
+				font-weight : bold;
+			}
+			&.oview-regx {
+				border-right : 5px solid $text-icon-bkgd-color
+			}
+			// &.exclude {
+			// 	padding-left : 5px;
+			// 	border-left : 4px solid $text-icon-bkgd-color
+			// }
+			// &.regx:after {
+			// 	content : "RE";
+			// 	position : absolute;
+			// 	top : 0;
+			// 	right : 0px;
+			// 	color : #1381fd;
+			// 	background-color : #1381fd;
+			// }
+		}
+	}
+
+	
+	
+}
+
+[data-oview-id=filterHistoryWrapper] {
+	&.oview-dark {
+		[data-oview-id=filterHistory] {
+			background-color : $dark-tools-bkgd;
+			@include dark-scrollbar-style;
+			.oview-item {
+				background-color : $dark-tools-bkgd;
+				color : #FFFFFF;
+				&:hover {
+					background-color : $dark-tools-history-hover;
+				}
+			}
+		}
+	}
+}
+
+[data-oview-id=tools] {
+	position : absolute;
+	display : block;
+	width : 100%;
+	height : $header-h;
+	line-height : $header-h;
+	top : 0px;
+	left : 0px;
+	background-color : $tools-bkgd;
+	//box-shadow : 0 0 20px rgba(0,0,0,0.3);
+    border-bottom : 1px solid #dcdcdc;
+	z-index : 2;
+	padding : 0;
+	margin : 0;
+	white-space : nowrap;
+
+	[data-oview-id=filterWrapper] {
+		position: relative;
+		display : inline-block;
+		margin-left: 0px;
+		width : 40%;
+		height : $header-h;
+		font-size: 11px;
+		font-family : $coder-font;
+		z-index : 21;
+		//background-color : #FF0000;
+		[data-oview-id=filter] {
+			position: absolute;
+			top : 2px;
+			color : $search-input-color;
+			outline : none;
+			height: 20px;
+			padding-left : 7px;
+			border-radius: 0;
+			border-top-left-radius: 10px;
+			// border-top-right-radius: 0;
+			// border-bottom-right-radius: 0;
+			border-bottom-left-radius: 10px;
+		}
+		
+	}
+
+	[data-oview-id=regxWrapper] {
+		@include text-icon;
+		margin-left: -3px;
+		width : 23px;
+		[data-oview-id=regx] {
+			margin-left: -2px;
+			width : 23px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	// #excludeWrapper {
+	// 	@include text-icon;
+	// 	margin-right: -10px;
+	// 	width : 20px;
+	// 	#exclude {
+	// 		width : 20px;
+	// 		border-top-left-radius: 10px;
+	// 		border-top-right-radius: 0;
+	// 		border-bottom-right-radius: 0;
+	// 		border-bottom-left-radius: 10px;
+	// 	}
+	// }
+	
+
+	&.oview-dark {
+		background-color : $dark-tools-bkgd;
+		[data-oview-id=filterWrapper] {
+			[data-oview-id=filter] {
+				background-color : #000000;
+				color : $dark-search-input-color;
+				border : 1px solid #353535;
+			}
+		}
+		
+
+		.oview-toolbar-icon {
+
+			&.oview-active {
+				background-color : #000000;
+			}
+
+			i.oview-clear {
+				&:hover {
+					background-image : url(../images/toolbar/cancel-hover-dark.svg) !important;
+				}
+			}
+			i.oview-down {
+				&:hover {
+					background-image : url(../images/toolbar/down-hover-dark.svg) !important;
+				}
+			}
+			i.oview-up {
+				&:hover {
+					background-image : url(../images/toolbar/up-hover-dark.svg) !important;
+				}
+			}
+			i.oview-gear {
+				&:hover {
+					background-image : url(../images/toolbar/gear-hover-dark.svg) !important;
+				}
+				&.oview-opened {
+					background-image : url(../images/toolbar/gear-hover-dark.svg) !important;
+				}
+			}
+			i.oview-save {
+				&:hover {
+					background-image : url(../images/toolbar/save-hover-dark.svg) !important;
+				}
+				&.oview-opened {
+					background-image : url(../images/toolbar/save-hover-dark.svg) !important;
+				}
+			}
+			i.oview-toggleMin {
+				&:hover {
+					background-image : url(../images/tree-arrow-hover-dark.svg) !important;
+				}
+				
+			}
+			i.oview-eye {
+				&:hover {
+					background-image : url(../images/toolbar/eye-open-hover-dark.svg) !important;
+				}
+				.oview-closed {
+					&:hover {
+						background-image : url(../images/toolbar/eye-closed-hover-dark.svg) !important;
+					}
+				}
+				.oview-inverse {
+					&:hover {
+						background-image : url(../images/toolbar/eye-inverse-hover-dark.svg) !important;
+					}
+				}
+			}
+			i.oview-wrap {
+				&:hover {
+					background-image : url(../images/wrap-hover-dark.svg) !important;
+				}
+				.oview-no {
+					&:hover {
+						background-image : url(../images/toolbar/wrap-no-hover-dark.svg) !important;
+					}
+				}
+			}
+
+		}
+
+		[data-oview-id=regxWrapper] {
+			.oview-t-icon {
+				@include dark-t-icon-color;
+			}
+		}
+	
+		// #excludeWrapper {
+		// 	.t-icon {
+		// 		@include dark-t-icon-color;
+		// 	}
+		// }
+	}
+}

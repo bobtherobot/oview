@@ -1,0 +1,122 @@
+// @use "app.vars.scss" as *;
+// @use "app.mixins.scss" as *;
+// @use "app.output.scss" as *;
+// @use "app.panel.save.scss" as *;
+// @use "app.tools.scss" as *;
+
+@import "app.vars";
+@import "app.mixins";
+@import "app.output";
+@import "app.panel.save";
+@import "app.tools";
+@import "app.tools.icon";
+
+html, body{
+	width : 100%;
+	height : 100%;
+	margin : 0;
+	padding : 0;
+	overflow : hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility; /* auto  optimizeSpeed  geometricPrecision  optimizeLegibility */
+	text-size-adjust: 100%;
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", 'Inter', "Helvetica Neue", "Arial", sans-serif;
+	//font-family: BlinkMacSystemFont, -apple-system, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+* {
+	box-sizing : border-box;
+	scrollbar-width: thin !important;
+}
+
+
+mark, mark + span{
+    @include search-results;
+}
+
+.oview-separator {
+	display : block;
+	margin-top: 20px;
+	width : 105%;
+	border-top : 1px solid rgba(125, 125, 125, 0.15)
+}
+
+[data-oview-id=clear] {
+	margin-left: -4px;
+}
+
+.oview-small-text {
+    font-size : 0.8em;
+}
+.oview-align-right {
+    float: right;
+}
+
+input, select {
+	border : $input-border;
+	color : $color-blue;
+	border-radius : $button-rounded;
+	padding : .3em;
+	width: 100%;
+	outline : none;
+}
+
+[data-oview-id=clickMask] {
+	position : absolute;
+	display : block;
+	background-color : rgba(255, 0, 0, 0);
+	top : 25px;
+	left : 0;
+	bottom : 0;
+	right : 0;
+	z-index : 10;
+	&:before {
+		content : ' ';
+		position : absolute;
+		top : -$header-h;
+		left : 0px;
+		width : 80px;
+		height : $header-h;
+		background-color : inherit; //rgba(255, 0, 0, 0.1);
+	}
+	&:after {
+		content : ' ';
+		position : absolute;
+		top : -$header-h;
+		right : 0px;
+		width : calc(60% - 120px);
+		height : $header-h;
+		background-color : inherit; //rgba(255, 0, 0, 0.1);
+	}
+}
+
+
+.oview-radio-group {
+	//clear: both;
+	display: inline-block;
+	white-space : nowrap;
+	label {
+		//float: left;
+		//display : inline-block;
+		@include button-up;
+		margin-right : -0.5em;
+		border-radius: 0;
+		&:first-of-type {
+			padding-right: 0.7em;
+			border-radius: $button-rounded 0 0 $button-rounded;
+		}
+		
+		&:last-of-type {
+			border-radius: 0 $button-rounded $button-rounded 0;
+		}
+	}
+	input[type=radio] {
+		display : none;
+		&:checked + label {
+			@include button-down;
+		}
+	}
+}

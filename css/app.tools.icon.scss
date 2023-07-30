@@ -1,0 +1,108 @@
+// @use "app.vars.scss" as *;
+// @use "app.mixins.scss" as *;
+@import "app.vars";
+@import "app.mixins";
+
+.oview-toolbar-icon {
+	display : inline-block;
+	position : relative;
+	width : $header-h;
+	height : $header-h;
+    vertical-align: top;
+	cursor : pointer;
+	transition : all 200ms ease-in-out;
+
+	&.oview-active {
+		background-color : #FFFFFF;
+	}
+	
+	i {
+		display : inline-block;
+		position : absolute;
+		width : $header-h;
+		height : $header-h;
+		background-repeat: no-repeat;
+		background-position : 50% 50%;
+		background-size : 50% 50%;
+	}
+
+	&.oview-asMin {
+		transform-origin : 50% 50%;
+		transform : rotate(-90deg);
+	}
+	
+	i.oview-clear {
+		background-image : url(../images/toolbar/cancel.svg);
+		&:hover {
+			background-image : url(../images/toolbar/cancel-hover.svg);
+		}
+	}
+	i.oview-down {
+		background-image : url(../images/toolbar/down.svg);
+		&:hover {
+			background-image : url(../images/toolbar/down-hover.svg);
+		}
+	}
+	i.oview-up {
+		background-image : url(../images/toolbar/up.svg);
+		&:hover {
+			background-image : url(../images/toolbar/up-hover.svg);
+		}
+	}
+	i.gear {
+		background-image : url(../images/toolbar/gear.svg);
+		&:hover {
+			background-image : url(../images/toolbar/gear-hover.svg);
+		}
+		&.opened {
+			background-image : url(../images/toolbar/gear-hover.svg);
+		}
+	}
+	i.oview-save {
+		background-image : url(../images/toolbar/save.svg);
+		&:hover {
+			background-image : url(../images/toolbar/save-hover.svg);
+		}
+		&.oview-opened {
+			background-image : url(../images/toolbar/save-hover.svg);
+		}
+	}
+	i.oview-toggleMin {
+		background-image : url(../images/tree-arrow.svg);
+		transform-origin : 50% 50%;
+		transform : rotate(90deg);
+		&:hover {
+			background-image : url(../images/tree-arrow-hover.svg);
+		}
+	}
+	i.oview-eye {
+		background-image : url(../images/toolbar/eye-open.svg);
+		&:oview-hover {
+			background-image : url(../images/toolbar/eye-open-hover.svg);
+		}
+		&.oview-closed {
+			background-image : url(../images/toolbar/eye-closed.svg);
+			&:hover {
+				background-image : url(../images/toolbar/eye-closed-hover.svg);
+			}
+		}
+		&.oview-inverse {
+			background-image : url(../images/toolbar/eye-inverse.svg);
+			&:hover {
+				background-image : url(../images/toolbar/eye-inverse-hover.svg);
+			}
+		}
+	}
+	i.oview-wrap {
+		background-image : url(../images/toolbar/wrap.svg);
+		&:hover {
+			background-image : url(../images/toolbar/wrap-hover.svg);
+		}
+		&.oview-no {
+			background-image : url(../images/toolbar/wrap-no.svg);
+			&:hover {
+				background-image : url(../images/toolbar/wrap-no-hover.svg);
+			}
+		}
+	}
+}

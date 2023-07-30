@@ -1,0 +1,220 @@
+//@use "app.vars.scss" as *;
+@import "app.vars";
+
+@mixin line-transition-reveal {
+	transition : all 250ms ease-in-out;
+}
+
+@mixin search-results {
+	color : #FF0000;
+	background-color : rgba(0,0,0,0);
+	border-bottom : 1px solid #FF0000;
+}
+
+@mixin dark-search-results {
+	color : #fff700;
+	background-color : rgba(0,0,0,0);
+	border-bottom : 1px solid #fff700;
+}
+
+@mixin selection {
+	&::-moz-selection { /* Code for Firefox */
+		color : $selection-text;
+		background-color: $selection-bkgd;
+	}
+		
+	&::selection {
+		color : $selection-text;
+		background-color: $selection-bkgd;
+	}
+	cursor : default;
+}
+
+/*
+@mixin line-click {
+	&:active:before {
+		border-left: 4px solid lighten($dark-background-color, 50);
+		width : 1px;
+		height : 100%;
+		position : absolute;
+		left : 0;
+		top : 0;
+		content : ' ';
+	}
+}
+
+@mixin dark-line-click {
+	&:active:before {
+		border-left: 4px solid lighten($dark-background-color, 15);
+		width : 1px;
+		height : 100%;
+		position : absolute;
+		left : 0;
+		top : 0;
+		content : ' ';
+	}
+}
+
+
+@mixin reveal {
+	//&:active {
+		position : relative;
+		display : inline;
+		white-space : normal;
+		word-break: break-all;
+	//}
+}
+*/
+@mixin line-hover {
+	&:hover, &:active {
+		background-color: darken($background-color, 3);
+	}
+	// &:active {
+	// 	.value {
+	// 		@include reveal;
+	// 	}
+	// }
+	// &.reveal {
+	// 	.value {
+	// 		@include reveal;
+	// 	}
+	// }
+}
+
+@mixin dark-line-hover {
+	&:hover {
+		background-color: lighten($dark-background-color, 6);
+	}
+}
+
+@mixin page-and-link-coloring {
+	&.oview-page {
+		color : $page-view-color;
+		@include selection;
+		.oview-name {
+			color : $property-name-color;
+			@include selection;
+		}
+	}
+	&.oview-link {
+		color : $link-click-color;
+		@include selection;
+		.oview-name {
+			color : $property-name-color;
+			@include selection;
+		}
+	}
+    &.oview-target {
+		color : $target-color;
+		@include selection;
+		.oview-name {
+			color : $property-name-color;
+			@include selection;
+		}
+	}
+}
+
+
+@mixin button-up {
+	padding: .4em 0.6em;
+	cursor: pointer;
+	border: 1px solid #cfcfcf;
+	margin-right: .2em;
+	color: #7c7c7c;
+	background-color: #e6e6e6;
+	border-radius : $button-rounded;
+}
+@mixin dark-button-up {
+	border: 1px solid #3f3f3f;
+	color: #000000;
+	background-color: #636363;
+}
+
+@mixin button-down {
+	color: #fff;
+	background-color: $color-blue;
+}
+@mixin dark-button-down {
+	color: #fff;
+	background-color: darken($color-blue, 10);
+}
+
+
+@mixin button {
+	.oview-genericButton  {
+        position : relative;
+        display : inline-block;
+        margin : 3px;
+		@include button-up;
+		&:active {
+			@include button-down;
+		}
+	}
+}
+
+@mixin dark-button {
+	.oview-genericButton {
+		@include dark-button-up;
+		&:active {
+			@include dark-button-down;
+		}
+	}
+}
+
+@mixin dark-radio-group {
+	.oview-oview-radio-group {
+		label {
+			@include dark-button-up;
+		}
+		input[type=radio] {
+			&:checked + label {
+				@include button-down;
+			}
+		}
+	}
+}
+
+@mixin scrollbar-style {
+	&::-webkit-scrollbar {
+		height: $scrollbar-size;
+		width: $scrollbar-size;
+		background: $light-background-color;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: $light-scrollbar-thumb;
+		-webkit-border-radius: $scrollbar-size;
+	}
+	
+	&::-webkit-scrollbar-corner {
+		background: $light-background-color;
+	}
+}
+
+@mixin dark-scrollbar-style {
+	&::-webkit-scrollbar {
+		height: $scrollbar-size;
+		width: $scrollbar-size;
+		background: $dark-scrollbar-bkgd;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: $dark-scrollbar-thumb;
+		-webkit-border-radius: $scrollbar-size;
+	}
+	
+	&::-webkit-scrollbar-corner {
+		background: $dark-scrollbar-bkgd;
+	}
+}
+
+
+
+
+@mixin dark-inputs {
+	input, select {
+		border-color : #585858;
+		color : lighten($color-blue, 30);
+		background-color : #000000;
+	}
+}

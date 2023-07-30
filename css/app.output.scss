@@ -1,0 +1,277 @@
+// @use "app.vars.scss" as *;
+// @use "app.mixins.scss" as *;
+@import "app.vars";
+@import "app.mixins";
+
+
+
+.oview-folder {
+	overflow: hidden;
+}
+
+.oview-tab-char {
+	display : inline-block;
+	position : relative;
+	width : 1px;
+	height : 1px;
+	line-height : 1px;
+	margin : 0;
+	padding : 0;
+	overflow: hidden;
+}
+
+[data-oview-id=output] {
+	position : absolute;
+	display : block;
+	scroll-behavior: smooth;
+	//width : 105%;
+	left : 0px;
+	right : 0px;
+	top : $header-h;
+	bottom : 0px;
+
+	//margin-left : -0.5em;
+	overflow : auto;
+	font-size : $font-size;
+	background-color : $background-color;
+	line-height : 1.5em;
+	font-family : $coder-font;
+	@include scrollbar-style;
+
+	.oview-data-block {
+		padding : 0; //.5em 0 0.5em 0;
+		@include selection;
+		
+		@include page-and-link-coloring;
+	
+		.oview-header, .oview-data-line {
+			white-space : nowrap;
+			padding : 0.3em;
+			@include selection;
+		}
+		.oview-header {
+			font-weight : bold;
+			border-bottom : $row-underline;
+			@include selection;
+		}
+
+		
+	
+		// .data-line:nth-of-type(odd) {
+		// 	background-color : $alternate-row-bkgd-color;
+		// 	@include selection;
+		// }
+		.oview-data-line {
+			position : relative;
+			display : inline-block;
+			white-space : nowrap;
+			word-break: none;
+			padding : 0 0 0 0.6em;
+			border-bottom : $row-underline;
+			transition : $line-transition;
+			//@include line-click;
+			@include line-hover;
+			@include selection;
+			//line-height : 1.4em;
+			//overflow: hidden;
+			//width : 100%;
+			
+			.oview-name {
+				display : inline-block;
+				//max-width : 7em;
+				margin : 0 1em 0 1em;
+				white-space : nowrap;
+				overflow : elipsis;
+				@include selection;
+				vertical-align: top;
+			}
+			.oview-value {
+				// // moved to base for wrap toggle
+				// // wrap
+				// display : inline;
+				// white-space : normal;
+				// word-break: break-all;
+				//
+				// // nowrap
+				// display : inline-block;
+				// white-space : nowrap;
+				// word-break: none;
+
+				&.oview-numeric {
+					color : $light-text-numeric;
+				}
+
+				@include selection;
+			}
+
+
+			&.oview-reveal {
+				border : 1px solid rgb(0, 174, 255);
+				border-radius : 0.5em;
+				padding : 0.5em 0.5em 0.5em 1em;
+				margin : 2px;
+				box-shadow: 0 0 15px rgba(0, 174, 255, 0.3);
+				background-color : #FFFFFF;
+				.oview-value {
+					display : inline;
+					white-space : normal;
+					word-break: break-word; // normal  break-all;
+				}
+				.oview-name {
+					margin-left : 0.3em;
+				}
+			}
+
+
+			&.oview-product {
+				padding-left : 2em;
+				@include selection;
+				.oview-value {
+					color : $page-view-color-product;
+					@include selection;
+				}
+			}
+			&.oview-product-title {
+				font-weight : bold;
+				@include selection;
+				.oview-name {
+					color : $page-view-color-product;
+					@include selection;
+				}
+			}
+		}
+	
+		
+	}
+
+	&.dark {
+
+		background-color : $dark-background-color;
+
+		@include dark-scrollbar-style;
+
+		@include dark-button;
+
+		mark, mark + span{
+			@include dark-search-results;
+		}
+
+		.oview-data-block {
+			&.oview-page {
+				color : $dark-page-view-color;
+				.oview-name {
+					color : $dark-property-name-color;
+				}
+			}
+			&.oview-link {
+				color : $dark-link-click-color;
+				.oview-name {
+					color : $dark-property-name-color;
+				}
+			}
+            &.oview-target {
+				color : $dark-target-color;
+				.oview-name {
+					color : $dark-property-name-color;
+				}
+			}
+
+
+			.oview-header {
+				border-bottom : $dark-row-underline;
+			}
+			// nth-of-type
+			// nth-child
+			// .data-line:nth-of-type(odd) {
+			// 	background-color : $dark-alternate-row-bkgd-color;
+			// }
+			.oview-data-line {
+				border-bottom : $dark-row-underline;
+				//@include dark-line-click;
+				@include dark-line-hover;
+				&.oview-numeric {
+					color : $dark-text-numeric;
+				}
+				&.oview-reveal {
+					border : 1px solid rgb(0, 174, 255);
+					background-color : $dark-background-color;
+				}
+				&.oview-product {
+					.oview-value {
+						color : $dark-page-view-color-product;
+					}
+				}
+				&.oview-product-title {
+					.oview-name {
+						color : $dark-page-view-color-product;
+					}
+				}
+			}
+		}
+
+		.oview-folder {
+			label {
+				border-bottom: $dark-row-underline;
+				&.oview-sub-folder-title {
+					color : $dark-sub-folder-title;
+				}
+			}
+		}
+	}
+
+
+	.oview-folder input[type=checkbox] { 
+		display: none;
+	}
+	.oview-folder label::before {
+		display: inline-block;
+		content: ' ';
+		background-image: url(../images/tree-arrow.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 1em;
+		width: 1em;
+		padding-right : 0.3em;
+		margin-left : 0.3em;
+  		transition: all 0.2s;
+	}
+	.oview-folder input:checked ~ label::before {
+		transform: rotate(90deg) translateX(0.4em) translateY(0.2em);
+	}
+
+	.oview-folder {
+		white-space : nowrap;
+		// overflow: hidden; // moved to base for wrap toggle
+		width : 100%;
+		label {
+			display : block;
+			//padding: 0.2em;
+			border-bottom: $row-underline;
+			@include selection;
+			//line-height : 1.2em;
+
+			//word-break: break-all;
+			//white-space: normal;
+			&.oview-sub-folder-title {
+				color : $sub-folder-title;
+			}
+			.oview-folder-header-value {
+				margin : 0 0 0 1em;
+				@include selection;
+				@include page-and-link-coloring;
+				white-space : nowrap;
+			}
+	
+		}
+	}
+	.oview-folder .oview-folder-content {
+		padding-left : 1em;
+		display: none;
+  		//transition: all 1s;
+		height: auto;
+		//padding-top: 1px;
+	}
+	.oview-folder input:checked ~ .oview-folder-content {
+		display: block;
+	}
+}

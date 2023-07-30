@@ -1,0 +1,51 @@
+html, body {
+	margin : 0;
+	padding : 5px 20px 10px 20px;
+	overflow : hidden;
+
+}
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility; /* auto  optimizeSpeed  geometricPrecision  optimizeLegibility */
+	text-size-adjust: 100%;
+	font-size: 14px;
+	font-family: BlinkMacSystemFont, -apple-system, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  
+	background-color : #EFEFEF;
+  
+}
+.oview-view {
+	padding : 25px 0 25px 0;
+}
+.oview-title-link{
+	line-height : 12px;
+	h1 {
+		font-size : 16px;
+		font-weight : bold;
+		line-height : 20px;
+		padding : 0;
+		margin : 0;
+	}
+	img { 
+		padding-right : 3px;
+	}
+}
+
+a {
+	color : #505050;
+	text-decoration : none;
+
+	&:hover {
+		color : #000000;
+	}
+}
+.oview-sub-text {
+	font-size : 11px;
+	line-height : 14px;
+	padding : 0;
+	margin : 0;
+}
