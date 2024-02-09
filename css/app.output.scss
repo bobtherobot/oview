@@ -52,6 +52,7 @@
 		.oview-header {
 			font-weight : bold;
 			border-bottom : $row-underline;
+			border-left : $row-underline;
 			@include selection;
 		}
 
@@ -62,6 +63,7 @@
 			word-break: none;
 			padding : 0 0 0 0.6em;
 			border-bottom : $row-underline;
+			border-left : $row-underline;
 			transition : $line-transition;
 			@include line-hover;
 			@include selection;
@@ -69,7 +71,7 @@
 			.oview-name {
 				display : inline-block;
 				//max-width : 7em;
-				margin : 0 1em 0 1em;
+				margin : 0 1em 0 0.5em;
 				white-space : nowrap;
 				overflow : elipsis;
 				@include selection;
@@ -159,10 +161,12 @@
 
 			.oview-header {
 				border-bottom : $dark-row-underline;
+				border-left : $dark-row-underline;
 			}
 	
 			.oview-data-line {
 				border-bottom : $dark-row-underline;
+				border-left : $dark-row-underline;
 	
 				@include dark-line-hover;
 				&.oview-numeric {
@@ -188,6 +192,7 @@
 		.oview-folder {
 			label {
 				border-bottom: $dark-row-underline;
+				border-left: $dark-row-underline;
 				&.oview-sub-folder-title {
 					color : $dark-sub-folder-title;
 				}
@@ -202,11 +207,16 @@
 	.oview-folder label::before {
 		display: inline-block;
 		content: ' ';
-		background-image: url(../images/tree-arrow.svg);
-		background-size: contain;
-		background-repeat: no-repeat;
-		height: 1em;
-		width: 1em;
+		// background-image: url(../images/tree-arrow.svg);
+		// background-size: contain;
+		// background-repeat: no-repeat;
+		// height: 1em;
+		// width: 1em;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0.3em 0 0.3em 0.6em;
+        border-color: transparent transparent transparent $light-sub-folder-title;
 		padding-right : 0.3em;
 		margin-left : 0.3em;
   		transition: all 0.2s;
@@ -222,6 +232,7 @@
 		label {
 			display : block;
 			border-bottom: $row-underline;
+			border-left: $row-underline;
 			@include selection;
 
 			&.oview-sub-folder-title {
@@ -240,6 +251,7 @@
 		padding-left : 1em;
 		display: none;
 		height: auto;
+        border-left: 1px solid #EFEFEF;
 	}
 	.oview-folder input:checked ~ .oview-folder-content {
 		display: block;

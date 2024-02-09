@@ -139,6 +139,7 @@
 [data-oview-id=output] .oview-data-block .oview-header {
   font-weight: bold;
   border-bottom: 1px solid rgb(243, 243, 243);
+  border-left: 1px solid rgb(243, 243, 243);
   cursor: default;
 }
 [data-oview-id=output] .oview-data-block .oview-header::-moz-selection { /* Code for Firefox */
@@ -156,6 +157,7 @@
   word-break: none;
   padding: 0 0 0 0.6em;
   border-bottom: 1px solid rgb(243, 243, 243);
+  border-left: 1px solid rgb(243, 243, 243);
   transition: background-color 250ms ease-in-out, border 250ms ease-in-out;
   cursor: default;
 }
@@ -172,7 +174,7 @@
 }
 [data-oview-id=output] .oview-data-block .oview-data-line .oview-name {
   display: inline-block;
-  margin: 0 1em 0 1em;
+  margin: 0 1em 0 0.5em;
   white-space: nowrap;
   overflow: elipsis;
   cursor: default;
@@ -313,9 +315,11 @@
 }
 [data-oview-id=output].dark .oview-data-block .oview-header {
   border-bottom: 1px solid rgb(61, 61, 61);
+  border-left: 1px solid rgb(61, 61, 61);
 }
 [data-oview-id=output].dark .oview-data-block .oview-data-line {
   border-bottom: 1px solid rgb(61, 61, 61);
+  border-left: 1px solid rgb(61, 61, 61);
 }
 [data-oview-id=output].dark .oview-data-block .oview-data-line:hover {
   background-color: #3d3d3d;
@@ -335,6 +339,7 @@
 }
 [data-oview-id=output].dark .oview-folder label {
   border-bottom: 1px solid rgb(61, 61, 61);
+  border-left: 1px solid rgb(61, 61, 61);
 }
 [data-oview-id=output].dark .oview-folder label.oview-sub-folder-title {
   color: #888888;
@@ -345,11 +350,11 @@
 [data-oview-id=output] .oview-folder label::before {
   display: inline-block;
   content: " ";
-  background-image: url(../images/tree-arrow.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 1em;
-  width: 1em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.3em 0 0.3em 0.6em;
+  border-color: transparent transparent transparent #989898;
   padding-right: 0.3em;
   margin-left: 0.3em;
   transition: all 0.2s;
@@ -364,6 +369,7 @@
 [data-oview-id=output] .oview-folder label {
   display: block;
   border-bottom: 1px solid rgb(243, 243, 243);
+  border-left: 1px solid rgb(243, 243, 243);
   cursor: default;
 }
 [data-oview-id=output] .oview-folder label::-moz-selection { /* Code for Firefox */
@@ -466,6 +472,7 @@
   padding-left: 1em;
   display: none;
   height: auto;
+  border-left: 1px solid #EFEFEF;
 }
 [data-oview-id=output] .oview-folder input:checked ~ .oview-folder-content {
   display: block;

@@ -3,7 +3,7 @@ Zero dependency object viewer
 
 Provides a means to display mulitple objects in a single view, with search fetures.
 
-## Instanciate an object viwer (simple)
+## Instanciate an object viwwer (simple)
 
 A simple instance:
 
@@ -11,7 +11,7 @@ A simple instance:
 
     var myViewer = window.oview.make("target1");
 
-## Instanciate an object viwer (with options)
+## Instanciate an object viewer (with options)
 
      // oview.make({
      //    elem        // (required) the to put the viewer into. Can be DIV id (string), or use a physical DOM element.
@@ -48,20 +48,36 @@ A simple instance:
 
 # Example
 
-    document.addEventListener("DOMContentLoaded", () => {
+    <html>
+    <title>Object Viewer Example</title>
+    
+    <!-- object viewer -->
+	<link href="oviwer.min.css" rel="stylesheet">
+    <script src="oviwer.min.js"></script>
 
-        var myViewer = window.oview.make({
-            elem : "target1"
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            var myViewer = window.oview.make("target1");
+            myViewer.add({
+                bob : "er",
+                sally : {
+                    prop1 : 1,
+                    prop2 : 2,
+                    prop3 : 3
+                }
+            }, "my object label");
+
         });
+        </script>
+    </head>
 
-        // add an object:
-        myViewer.add({
-            bob : "er",
-            sally : {
-                prop1 : 1,
-                prop2 : 2,
-                prop3 : 3
-            }
-        }, "my object label");
+    
+    <body>
+        <div id="target1">
+    </body>
+    
+    </html>
 
-    });
+    

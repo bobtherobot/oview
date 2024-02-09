@@ -42,6 +42,57 @@
             height : 300px;
             /*border : 1px solid #CCCCCC;*/
         }
+
+        .myklass0 .oview-folder-title {
+            color : #FF0000 !important;
+        }
+        .myklass0 .oview-name, .myklass0 .oview-value {
+            color : #b700ff !important;
+        }
+        
+        .myklass1 {
+            color : #00FF00;
+        }
+        .myklass2 {
+            color : #0000FF;
+        }
+        .myklass3 {
+            color : #0d8e6d;
+        }
+
+        .myklass2.oview-data-block > .oview-folder > .oview-folder-header {
+            /* will apply to the overall entry block
+               notice the rule definition does not seperated lass names with a space */
+            color : #14a5f9 !important;
+            padding-top : 10px !important;
+            background-color : #CCCCCC;
+        }
+
+        .my-css-klass .oview-name {
+            /* will apply to the key part of the key:value pairs */
+            color : #FF0000 !important;
+        }
+
+        .my-css-klass .oview-value {
+            /* will apply to the value part of the key:value pairs */
+            color : #00FF00 !important;
+        }
+
+        .my-css-klass .oview-folder-title {
+            /* will apply to an object title */
+            color : #0000FF !important;
+        }
+
+        .my-css-klass.oview-data-block {
+            /* will apply to the overall entry block
+               notice the rule definition does not seperated lass names with a space */
+            color : #00FFFF !important;
+            padding-top : 0px !important;
+        }
+        .my-css-klass .oview-folder-header {
+            /* will apply to the sub-objects 
+            padding-top : 5px !important;*/
+        }
     </style>
 </head>
 <body>
@@ -244,13 +295,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    bob1.add(obj1);
-    bob1.add(obj2, "this is my header");
-    bob1.add(obj3, "real json");
-    bob1.add(obj4, "js js obj");
+    bob1.add(obj1, null, "myklass0");
+    bob1.add(obj2, "this is my header", "myklass1");
+    bob1.add(obj3, "real json", "myklass2");
+    bob1.add(obj4, "js js obj", "myklass3");
 
 
-    bob2.add(obj5, "verizon vzdl");
+    bob2.add(obj5, "verizon vzdl", "my-css-klass");
 
 });
 </script>

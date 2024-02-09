@@ -6,7 +6,7 @@ window.oview.process = (function(){
 
 	var searchableDelimiter = "_%|%_";
 
-	function make(srcObj, header, main){
+	function make(srcObj, header, main, klass){
 
 		if(srcObj && typeof srcObj == "object") {
 			var raw = JSON.stringify(srcObj);
@@ -16,7 +16,8 @@ window.oview.process = (function(){
 				data : srcObj,
 				id : main.callNum++,
                 header : header,
-                main : main
+                main : main,
+                klass : klass
 			});
 
 			var flat = oview.utils.flatten(srcObj)
@@ -54,7 +55,7 @@ window.oview.process = (function(){
 
 		var drawObject = oview.utils.drawObject;
 
-		var block = oview.utils.makeElem("div", "oview-data-block" + (type ? " oview-" + type : "") );
+		var block = oview.utils.makeElem("div", "oview-data-block" + (type ? " oview-" + type : "") + (entry.klass ? " " + entry.klass : "") );
 		// var blockFolder = oview.utils.makeFolder({
 		// 	title : entry.header || "entry #" + (entryNum++), 
 		// 	type : type, 

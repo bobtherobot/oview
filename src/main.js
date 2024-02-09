@@ -49,12 +49,12 @@ window.oview.main = (function(){
 
 	}
 	
-    p.add = function(obj, header){
+    p.add = function(obj, header, klass){
 
         if(typeof obj == 'string'){
             obj = window.oview.utils.JSONparse(obj);
         }
-        window.oview.process.make(obj, header, this);
+        window.oview.process.make(obj, header, this, klass);
     }
 
     p.destroy = function(){

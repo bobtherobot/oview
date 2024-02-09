@@ -25,6 +25,7 @@ window.oview = window.oview || {};
 		this.type = params.type;
 		this.reqUrl = params.reqUrl;
 		this.header = params.header;
+        this.klass = params.klass;
         var title = "#" + (this.main.callNum - 1);
         var hdr = params.header;
         if(hdr) {
@@ -105,6 +106,7 @@ window.oview = window.oview || {};
 		this.saveable = null;
 		this.elem = null;
 		this.builder = null;
+        this.klass = null;
 		this.reqUrl = null;
 		this.header = null;
 	}
